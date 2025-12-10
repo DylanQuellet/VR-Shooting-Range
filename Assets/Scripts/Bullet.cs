@@ -1,20 +1,38 @@
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Bullet : MonoBehaviour, IPooledObject
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-
     public float speed = 20f;
-    public float lifeTime = 3f;
+    public float lifeTime = 2f;
+    private Rigidbody rb;
 
-    void Start()
+    // Appel� automatiquement par l'ObjectPooler lors de l'activation
+    public void OnObjectSpawn()
     {
-        Destroy(gameObject, lifeTime);
+        if (rb == null) rb = GetComponent<Rigidbody>();
+
+        // 1. R�initialiser la vitesse (important si le RB a gard� l'inertie pr�c�dente)
+        rb.linearVelocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+
+        // 2. Appliquer la force
+        rb.AddForce(transform.forward * speed, ForceMode.Impulse);
+
+        // 3. D�sactiver automatiquement apr�s X secondes (remplace Destroy)
+        Invoke("DisableBullet", lifeTime);
     }
 
-    // Update is called once per frame
-    void Update()
+    void DisableBullet()
     {
-        transform.position += transform.forward * speed * Time.deltaTime;
+        gameObject.SetActive(false);
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        // Logique de d�g�ts ici...
+
+        // D�sactiver imm�diatement � l'impact
+        // CancelInvoke("DisableBullet"); // Annuler le timer de vie
+        //DisableBullet();
     }
 }

@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: FX_Quest
+  m_EditorClassIdentifier: 
+  m_GroupName: FX_Quest
+  m_GUID: e18bb32e30acbcc4c909254c0e3e87d6
+  m_SerializeEntries:
+  - m_GUID: 1a24d20296d83cd4b96d74e7ca2a1cee
+    m_Address: GunModel_PC
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b247c13a0d77a2f42a7a8de87d8a66b4
+    m_Address: Muzzle_VR
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e889807aa825ada4eadf4adb3c488e49
+    m_Address: Test_Cube_Quest
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f9ffd25c92eb9a743a81f3c397f46f70
+    m_Address: Explosion_VR
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: bde955204885d174093bc0bb686dbca6, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: b812b44ea9c34d247928d1fa52b51be2, type: 2}
