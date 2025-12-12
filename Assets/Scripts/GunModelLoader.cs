@@ -91,12 +91,12 @@ public class GunModelLoader : MonoBehaviour
         if (!FXLoader.IsQuest)
         {
             modelScale = new Vector3(0.1f, 0.1f, 0.1f);
-            modelRotation = new Vector3(0f, 180f, 0f);
+            modelRotation = new Vector3(25f, 180f, 0f);
         }
         else
         {
             modelScale = new Vector3(1f, 1f, 1f);
-            modelRotation = new Vector3(180f, 90f, 90f);
+            modelRotation = new Vector3(180f, 90f, 115f);
         }
 
         // --- Instanciation du modèle sans parent ---

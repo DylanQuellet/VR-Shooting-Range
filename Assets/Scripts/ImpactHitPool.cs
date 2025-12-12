@@ -42,10 +42,23 @@ public class ImpactHitPool : MonoBehaviour
 
     private GameObject explosionInstance;
 
+    private bool hasBeenHit = false;
+
     public void OnChildTriggerEnter(Collider other)
     {
+        if (hasBeenHit) return; // Empêche les doubles attaques
+
         if (other.CompareTag("Bullet"))
         {
+            hasBeenHit = true;
+            // Lorsque la cible est touchée
+            GameplayManager.Instance.AddScore(10);
+
+            // Exemple : diminuer le nombre de cibles actives
+            GameplayManager.Instance.RegisterTargetDespawn();
+
+            other.BroadcastMessage("DisableBullet", SendMessageOptions.DontRequireReceiver);
+
             PlayExplosion();
 
             Cylindre.SetActive(false);
@@ -98,6 +111,7 @@ public class ImpactHitPool : MonoBehaviour
         yield return new WaitForSeconds(3f);
 
         Cylindre.SetActive(true);
+        hasBeenHit = false; // Réinitialise l'état pour permettre de futurs hits
         CibleEntier.SetActive(false);
     }
 }

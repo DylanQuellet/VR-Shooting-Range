@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 6551439439768866456}
   - component: {fileID: 6382591307712708123}
   - component: {fileID: 6577242219903129485}
+  - component: {fileID: 1316605935846523193}
   m_Layer: 0
   m_Name: Cylinder
-  m_TagString: Untagged
+  m_TagString: Tank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,6 +111,19 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &1316605935846523193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575419712497346897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b93b1d13e33b48f42bd164049afc7368, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentScript: {fileID: 2994627718718809269}
 --- !u!1 &3203070711822545134
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,7 +170,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b501c5803ee6814eba854c946a3aafa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Explosion: {fileID: 6472483810945741222}
   Cylindre: {fileID: 1575419712497346897}
   CibleEntier: {fileID: 3203070711822545134}
 --- !u!1001 &5443158901108056493
@@ -216,11 +229,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61499a5f79923444796b11f5866d754e, type: 3}
---- !u!198 &6472483810945741222 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 1322683444730138635, guid: 61499a5f79923444796b11f5866d754e, type: 3}
-  m_PrefabInstance: {fileID: 5443158901108056493}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8089741245765359919 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4309228938013882498, guid: 61499a5f79923444796b11f5866d754e, type: 3}

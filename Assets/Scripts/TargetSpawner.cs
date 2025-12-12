@@ -33,6 +33,7 @@ public class TargetSpawner : MonoBehaviour
     // Paramètres de temps
     public float minSpawnInterval = 1f; // Temps minimum entre les spawns
     public float maxSpawnInterval = 3f; // Temps maximum entre les spawns
+    
 
     // Le tag de la cible dans l'ObjectPooler
     private const string TargetTag = "Target";
@@ -51,13 +52,17 @@ public class TargetSpawner : MonoBehaviour
         while (true) // Boucle infinie pour l'apparition
         {
             // 1. Déterminer le temps d'attente aléatoire (1s à 3s)
-            float waitTime = Random.Range(minSpawnInterval, maxSpawnInterval);
+            float spawnInterval = Random.Range(minSpawnInterval, maxSpawnInterval);
 
             // 2. Attendre le temps défini
-            yield return new WaitForSeconds(waitTime);
-
-            // 3. Appeler la fonction de spawn
-            SpawnTarget();
+            yield return new WaitForSeconds(spawnInterval);
+            if (GameplayManager.Instance.currentTarget < GameplayManager.Instance.maxTargets)
+            {
+                // 3. Appeler la fonction de spawn
+                GameplayManager.Instance.RegisterTargetSpawn();
+                SpawnTarget();
+                
+            }
         }
     }
 
