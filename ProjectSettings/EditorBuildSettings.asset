@@ -17,9 +17,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/MainXRScene CTP01.unity
     guid: 3c824f494c9adea40b8fdc8398c243e4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainXRScene CTP02.unity
     guid: bda77e0e50570034cb4ca7b91afe3dce
+  - enabled: 1
+    path: Assets/Scenes/Industrial_Map_VR.unity
+    guid: eeba59eeb95420b4cb6cba742768d37e
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 880244ab32691e649b7ab6db8e531869, type: 2}
     com.unity.addressableassets: {fileID: 11400000, guid: 664bf9e8e27fb224fbcbe5da0fb3e19a, type: 2}
